@@ -107,5 +107,7 @@ venv.bak/
 encoded_file.txt
 new_*.*
 extracted
+extracted_*
+extracted_*.*
 playground/
 playground/*

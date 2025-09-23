@@ -21,12 +21,17 @@ try:
     import magic
     has_magic = True
 except ImportError:
-    has_magic = False
-    print(
-        "Warning: 'python-magic' library not found. "
-        "File type detection will be disabled."
-        "Check required dependencies at https://pypi.org/project/python-magic/"
-    )
+    try:
+        from winmagic import magic
+        has_magic = True
+    except ImportError:
+        has_magic = False
+        print(
+            "Warning: 'python-magic' library not found. "
+            "File type detection will be disabled. "
+            "Check required dependencies at "
+            "https://pypi.org/project/python-magic/"
+        )
 
 
 # Default divider string
