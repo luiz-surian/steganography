@@ -30,7 +30,11 @@ def hide_in_file(
         f.write(b64_data)
 
     # Combine source file and encoded file into a new file
-    os.system(f"copy /b \"{source_path}\"+{encoded_file} \"{new_file_path}\"")
+    with open(source_path, "rb") as src, \
+         open(encoded_file, "rb") as enc, \
+         open(new_file_path, "wb") as out:
+        out.write(src.read())
+        out.write(enc.read())
 
     # Remove temporary encoded file
     os.remove(encoded_file)
