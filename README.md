@@ -74,7 +74,7 @@ python steganography.py
 ## Notes
 
 - The extracted file receives an automatic extension if `python-magic` is installed.
-- The divider can be customized for greater security.
+- You can customize the divider if you don't desire to utilize the default one, but be aware it will appear in plain text within the generated file.
 - There is no encryption, only simple hiding.
 
 ## License
